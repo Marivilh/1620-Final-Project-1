@@ -1,4 +1,4 @@
-def main(): #TODO: Adapt all of this to pyqt6
+'''def main(): #TODO: Adapt all of this to pyqt6
     john = 0
     jane = 0
     while True:
@@ -50,7 +50,14 @@ def candidate_menu():
         return int(vote)
     elif vote == "2":
         print("Voted Jane")
-        return int(vote)
+        return int(vote)'''
+from logic import *
+
+def main():
+    application = QApplication([])
+    window = Logic()
+    window.show()
+    application.exec()
 
 if __name__ == "__main__":
     main()
