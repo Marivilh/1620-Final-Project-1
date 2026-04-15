@@ -39,7 +39,7 @@
      <string>SUBMIT VOTE</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_age">
+   <widget class="QLabel" name="label_candidates">
     <property name="geometry">
      <rect>
       <x>81</x>
@@ -76,14 +76,14 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLabel" name="label_name">
+      <widget class="QLabel" name="label_id">
        <property name="text">
         <string>ID</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="input_name"/>
+      <widget class="QLineEdit" name="input_id"/>
      </item>
     </layout>
    </widget>
