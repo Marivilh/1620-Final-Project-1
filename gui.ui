@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>200</width>
-    <height>200</height>
+    <width>250</width>
+    <height>250</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>200</width>
-    <height>200</height>
+    <width>250</width>
+    <height>250</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>200</width>
-    <height>200</height>
+    <width>250</width>
+    <height>250</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -29,10 +29,10 @@
    <widget class="QPushButton" name="button_save">
     <property name="geometry">
      <rect>
-      <x>51</x>
-      <y>91</y>
-      <width>57</width>
-      <height>17</height>
+      <x>70</x>
+      <y>130</y>
+      <width>101</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -42,9 +42,9 @@
    <widget class="QLabel" name="label_age">
     <property name="geometry">
      <rect>
-      <x>51</x>
-      <y>41</y>
-      <width>48</width>
+      <x>81</x>
+      <y>81</y>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
@@ -55,10 +55,10 @@
    <widget class="QLabel" name="label_feedback">
     <property name="geometry">
      <rect>
-      <x>51</x>
-      <y>112</y>
-      <width>82</width>
-      <height>16</height>
+      <x>70</x>
+      <y>150</y>
+      <width>111</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -68,8 +68,8 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>10</y>
+      <x>70</x>
+      <y>50</y>
       <width>112</width>
       <height>21</height>
      </rect>
@@ -90,9 +90,9 @@
    <widget class="QRadioButton" name="radio_jane">
     <property name="geometry">
      <rect>
-      <x>51</x>
-      <y>55</y>
-      <width>35</width>
+      <x>81</x>
+      <y>95</y>
+      <width>71</width>
       <height>16</height>
      </rect>
     </property>
@@ -106,9 +106,9 @@
    <widget class="QRadioButton" name="radio_john">
     <property name="geometry">
      <rect>
-      <x>51</x>
-      <y>73</y>
-      <width>35</width>
+      <x>81</x>
+      <y>113</y>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
@@ -125,7 +125,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>200</width>
+     <width>250</width>
      <height>18</height>
     </rect>
    </property>
