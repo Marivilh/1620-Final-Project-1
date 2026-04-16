@@ -35,7 +35,6 @@ class Logic(QMainWindow, Ui_MainWindow):
         return count
                         
     def submit(self): 
-        #TODO: adapt this to get ID and check it against other IDs in the csv
         id = self.input_id.text().strip()
         
         if not id: #check if there is an ID and promts for one if not
@@ -69,13 +68,8 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.label_feedback.setStyleSheet("color: red;") 
             return
         
-        vote_Jane = None
-        vote_John = None
-        
-        if selected_vote == self.radio_jane:
-            vote_Jane = 'x'
-        elif selected_vote == self.radio_john:
-            vote_John = 'x'
+        vote_Jane = 'x' if selected_vote == self.radio_jane else ' '
+        vote_John = 'x' if selected_vote == self.radio_john else ' '
             
         # get totatl votes
         total_votes = self.total_votes() + 1
@@ -83,7 +77,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         # send data to the csv
         with open(self.csv_file, 'a', newline='') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow([id, vote_Jane if vote_Jane else '', vote_John if vote_John else '', total_votes])
+            writer.writerow([id, vote_Jane, vote_John, total_votes])
             
         self.label_feedback.setText("Vote submitted.")
         self.input_id.clear()
