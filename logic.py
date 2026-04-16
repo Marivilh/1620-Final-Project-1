@@ -79,7 +79,7 @@ class Logic(QMainWindow, Ui_MainWindow):
             writer = csv.writer(csvfile)
             writer.writerow([id, vote_Jane, vote_John, total_votes])
             
-        self.label_feedback.setText("Vote submitted.")
+        self.label_feedback.setText("Vote submitted. {total_votes} total votes.".format(total_votes=total_votes))
         self.input_id.clear()
         self.input_id.setFocus()
         
