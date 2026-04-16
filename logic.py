@@ -1,4 +1,5 @@
 import csv
+import os
 from PyQt6.QtWidgets import *
 from gui import *
 
@@ -9,29 +10,17 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.csv_file = 'data.csv'
         self.start_csv()
         
-        self.label_feedback.setText("INPUT VALID ID (6+ characters) AND SELECT A CANDIDATE")
+        self.label_feedback.setText("INPUT VALID ID AND SELECT A CANDIDATE")
 
         self.button_save.clicked.connect(lambda : self.submit())
 
     def start_csv(self):
         """ creates the csv file with proper headers"""
-        with open(self.csv_file, 'w', newline='') as csvfile:
-            headers = ['id', 'voteJane', 'voteJohn', 'totalVotes']
-            file_exists = os.path.exists(self.csv_file)
-            
-            write_header = False
-            if not file_exists:
-                write_header = True
-            else:
-                with open(self.csv_file, 'r') as f:
-                    first_line = f.readline().strip()
-                    if first_line != ','.join(headers):
-                        write_header = True
-                        
-            if write_header:
-                with open(self.csv_file, 'w', newline='') as csvfile:
-                    writer = csv.writer(csvfile)
-                    writer.writerow(headers)
+        headers = ['id', 'voteJane', 'voteJohn', 'totalVotes']
+        if not os.path.exists(self.csv_file) or os.stat(self.csv_file).st_size == 0:
+            with open(self.csv_file, 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(headers)
                     
     def total_votes(self):
         """calculates total votes in teh csv file"""
@@ -51,17 +40,17 @@ class Logic(QMainWindow, Ui_MainWindow):
         
         if not id: #check if there is an ID and promts for one if not
             self.label_feedback.setText("Enter an ID")
-            self.label_feelback.setStyleSheet("color: red;") 
+            self.label_feedback.setStyleSheet("color: red;") 
             return
         
         if not id.isdigit(): #chekc if id is numbers
             self.label_feedback.setText("ID must be numeric")
-            self.label_feelback.setStyleSheet("color: red;") 
+            self.label_feedback.setStyleSheet("color: red;") 
             return
         
         if len(id) < 6: #check id lenght
             self.label_feedback.setText("ID must be at least 6 characters")
-            self.label_feelback.setStyleSheet("color: red;") 
+            self.label_feedback.setStyleSheet("color: red;") 
             return
         
         if os.path.exists(self.csv_file): #check if id already is in the data file
@@ -71,13 +60,13 @@ class Logic(QMainWindow, Ui_MainWindow):
                 for row in reader:
                     if row and row[0] == id:
                         self.label_feedback.setText("ID already exists")
-                        self.label_feelback.setStyleSheet("color: red;") 
+                        self.label_feedback.setStyleSheet("color: red;") 
                         return
                     
         selected_vote = self.button_group.checkedButton()
         if selected_vote is None: #check if a candidate is selected
             self.label_feedback.setText("Select a candidate")
-            self.label_feelback.setStyleSheet("color: red;") 
+            self.label_feedback.setStyleSheet("color: red;") 
             return
         
         vote_Jane = None

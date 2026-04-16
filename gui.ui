@@ -57,12 +57,25 @@
      <rect>
       <x>70</x>
       <y>150</y>
-      <width>111</width>
-      <height>21</height>
+      <width>171</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
      <string>Please fill out all values</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>0</y>
+      <width>121</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>VOTING APPLICATION</string>
     </property>
    </widget>
    <widget class="QWidget" name="">
