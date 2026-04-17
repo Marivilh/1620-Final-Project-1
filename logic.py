@@ -15,7 +15,9 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.button_save.clicked.connect(lambda : self.submit())
 
     def start_csv(self):
-        """ creates the csv file with proper headers"""
+        """ creates the csv file with proper headers 
+            if it doesn't already exist
+        """
         headers = ['id', 'voteJane', 'voteJohn', 'totalVotes']
         if not os.path.exists(self.csv_file) or os.stat(self.csv_file).st_size == 0:
             with open(self.csv_file, 'w', newline='') as csvfile:
@@ -35,6 +37,9 @@ class Logic(QMainWindow, Ui_MainWindow):
         return count
                         
     def submit(self): 
+        """
+        submits the info to the csv file
+        """
         id = self.input_id.text().strip()
         
         if not id: #check if there is an ID and promts for one if not
