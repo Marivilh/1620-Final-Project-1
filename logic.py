@@ -14,7 +14,7 @@ class Logic(QMainWindow, Ui_MainWindow):
 
         self.button_save.clicked.connect(lambda : self.submit())
 
-    def start_csv(self):
+    def start_csv(self) -> None:
         """ creates the csv file with proper headers 
             if it doesn't already exist
         """
@@ -24,7 +24,7 @@ class Logic(QMainWindow, Ui_MainWindow):
                 writer = csv.writer(csvfile)
                 writer.writerow(headers)
                     
-    def total_votes(self):
+    def total_votes(self) -> None:
         """calculates total votes in teh csv file"""
         count = 0
         if os.path.exists(self.csv_file):
@@ -36,7 +36,7 @@ class Logic(QMainWindow, Ui_MainWindow):
                         count += 1
         return count
                         
-    def submit(self): 
+    def submit(self) -> None: 
         """
         submits the info to the csv file
         """
